@@ -2,6 +2,9 @@ class Stack:
     def __init__(self):
         self.items = []
 
+    def show(self):
+        return self.items
+
     def peek(self):
         return self.items[len(self.items) -1]
 
@@ -10,14 +13,12 @@ class Stack:
             return False
         return True
 
-
     def push(self, item):
         """Inserts element into stack"""
         self.items.append(item)
 
     def pop(self):
-        removed = self.items.pop()
-        return removed
+         return self.items.pop()
 
     def size(self):
         return len(self.items)
@@ -48,4 +49,26 @@ print(my_stack.size())
 
 print('PEEK')
 print(my_stack.peek())
+
+###########################################################################################
+# Write a function revstring(mystr) that uses a stack to reverse the characters in a string.
+###########################################################################################
+
+# def rev_string(s):
+#     stack = []
+#     s_list = list(s)
+#     while len(s_list) > 0:
+#         stack += s_list.pop()
+#     print(stack)
+
+def rev_string(s):
+    my_stack = Stack()
+    i = len(s)
+    for l in s:
+        my_stack.push((s[i - 1]))
+        i -= 1
+    print(my_stack.show())
+
+
+rev_string('This is my String')
 
