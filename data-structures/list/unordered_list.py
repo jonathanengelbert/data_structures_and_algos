@@ -63,23 +63,18 @@ class UnorderedList:
 
     # O(n) version of append
 
-    # def append(self, item):
-    #     if self.search(item):
-    #         return 'Item already in list'
-    #
-    #     current = self.head
-    #     while current:
-    #         if not current.get_next():
-    #             return current.set_next(Node(item))
-    #
-    #         current = current.get_next()
-    #
-
-    # O(1) version of append, by inserting in head instead of tail
     def append(self, item):
-        new_node = Node(item)
-        new_node.set_next(self.head)
-        self.head = new_node
+        if self.search(item):
+            return 'Item already in list'
+
+        current = self.head
+        while current:
+            if not current.get_next():
+                return current.set_next(Node(item))
+
+            current = current.get_next()
+
+
 
 
 
