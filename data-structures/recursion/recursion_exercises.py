@@ -11,7 +11,7 @@ print(factorial_recursevely(21))
 # Write a recursive function to reverse a list.
 
 def reverse_list(l):
-    if len(l) == 1: 
+    if len(l) == 1:
         return l
 
     return reverse_list(l[1:]) + l[:1]
